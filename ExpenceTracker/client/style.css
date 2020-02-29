@@ -1,0 +1,137 @@
+body {
+    background-color: #fafafa;
+}
+
+.app {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 0px;
+    margin: 0px auto;
+    max-width: 300px;
+}
+
+.header__text {
+    font-size: 1.75em;
+}
+
+.balance__title {
+    font-size: 1em;
+    margin:0px;
+}
+
+.balance__status {
+    font-size: 1.75em;
+    margin:0px;
+}
+
+.balance__elements {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 5px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1), 
+              0 1px 1px rgba(0,0,0,0.1), 
+              0 2px 2px rgba(0,0,0,0.1), 
+              0 4px 4px rgba(0,0,0,0.1),
+              0 5px 5px rgba(0,0,0,0.1);
+    background-color: #ffffff;
+    border-radius: 3px;
+}
+
+.balance__element {
+    padding:15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.balance__element-title {
+    margin: 0px;
+}
+
+.balance__element-amount {
+    margin: 0px;
+}
+
+.balance__element-amount--color-green {
+    color: rgb(83, 218, 83);
+}
+
+.balance__element-amount--color-red {
+    color: rgb(211, 66, 66);
+}
+
+.history {
+    margin-top: 20px;
+}
+
+.history__title {
+    font-size: 1em;
+    display: block;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    margin-bottom: 0px;
+    padding-bottom: 5px;
+}
+
+.history__list {
+    list-style-type: none;
+    padding:10px 0px;
+    margin:0px;
+}
+
+.history__item {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffffff;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1), 
+              0 1px 1px rgba(0,0,0,0.1), 
+              0 2px 2px rgba(0,0,0,0.1), 
+              0 4px 4px rgba(0,0,0,0.1),
+              0 5px 5px rgba(0,0,0,0.1);
+    margin:10px 5px;
+    padding: 0px 10px;
+    border-radius: 3px;
+}
+
+.history__item-title, .history__item-amount {
+    margin: 5px;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.history__item-amount--color-green {
+    color: rgb(83, 218, 83);
+}
+
+.history__item-amount--color-red {
+    color: rgb(211, 66, 66);
+}
+
+.NewTransaction__title {
+    font-size: 1em;
+    margin:0px;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.NewTransaction__title-label, .NewTransaction__Amount-label {
+    display: block;
+    font-weight: bolder;
+    font-size: 0.8em;
+}
+
+.NewTransaction__title-input, .NewTransaction__Amount-input {
+    display: block;
+    width: 288px;
+    padding: 5px;
+    margin: 10px 0px;
+    border-radius: 2px;
+    border: 1px solid #e2e2e2;
+    box-shadow: 0px;
+}
+
+.NewTransaction__btn {
+    background-color: rgb(83, 119, 218);
+    width: 100%;
+    color: #fafafa;
+    padding: 7px;
+    border: 0px;
+}

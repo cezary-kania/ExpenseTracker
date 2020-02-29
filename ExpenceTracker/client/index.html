@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Expense Tracker</title>
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <h1 class="header__text">Monthly Expence Tracker</h1>
+        </header>
+        <div class="balance">
+            <div class="balance__header"> 
+                <h2 class="balance__title">YOUR BALANCE</h2>
+                <p class="balance__status">$450.00</p>
+            </div>
+            <div class="balance__elements">
+                <div class="balance__element">
+                    <p class="balance__element-title">INCOME</p>
+                    <p class="balance__element-amount balance__element-amount--color-green">$500.00</p>
+                </div>
+                <div class="balance__element">
+                    <p class="balance__element-title">EXPENSE</p>
+                    <p class="balance__element-amount balance__element-amount--color-red">$50.00</p>
+                </div>
+            </div>
+        </div>
+        <div class="history">
+            <h2 class="history__title">History</h2>
+            <ul class="history__list">
+                <li class="history__item ">
+                    <p class="history__item-title">Payment</p>
+                    <p class="history__item-amount history__item-amount--color-green">+$500</p>
+                </li>
+                <li class="history__item">
+                    <p class="history__item-title">Book</p>
+                    <p class="history__item-amount history__item-amount--color-red">-$50</p>
+                </li>
+            </ul>
+        </div>
+        <div class="NewTransaction">
+            <h2 class="NewTransaction__title">Add new transaction</h2>
+            <form action="#" method="post">
+                <label for="TransactionTitle" class="NewTransaction__title-label">Title</label>
+                <input type="text" name="TransactionTitle" placeholder="Enter tittle..." class="NewTransaction__title-input">
+                <label for="TransactionAmount" class="NewTransaction__Amount-label">Amount <br> (negative - expense, positive -income)</label>
+                <input type="number" name="TransactionAmount" placeholder="0" class="NewTransaction__Amount-input">
+                <input type="button" value="Add transaction" class="NewTransaction__btn">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
