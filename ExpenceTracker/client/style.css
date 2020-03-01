@@ -78,7 +78,7 @@ body {
 
 .history__item {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     background-color: #ffffff;
     box-shadow: 0 1px 1px rgba(0,0,0,0.1), 
               0 1px 1px rgba(0,0,0,0.1), 
@@ -90,6 +90,10 @@ body {
     border-radius: 3px;
 }
 
+.history__item-desc {
+    display: flex;
+    justify-content: space-between;
+}
 .history__item-title, .history__item-amount {
     margin: 5px;
     font-weight: 600;
@@ -103,6 +107,28 @@ body {
 .history__item-amount--color-red {
     color: rgb(211, 66, 66);
 }
+
+.history__item-delBtns {
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px 5px;
+}
+
+.history__item-DelBtn,.history__item-cancelDelBtn  {
+    background-color: #ffffff;
+    border: 0px;
+    font-size: 0.75em;
+    font-weight: bold;
+}
+
+.history__item-cancelDelBtn {
+    color: rgb(83, 119, 218);
+}
+
+.history__item-DelBtn {
+    color:rgb(211, 66, 66);
+}
+
 
 .NewTransaction__title {
     font-size: 1em;
@@ -132,6 +158,7 @@ body {
     background-color: rgb(83, 119, 218);
     width: 100%;
     color: #fafafa;
+    font-weight: bold;
     padding: 7px;
     border: 0px;
 }

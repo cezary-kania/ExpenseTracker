@@ -1,0 +1,22 @@
+{
+    "transactions" : [
+        {
+           "title":"Payment",
+           "amount" : "500",
+           "currency":"$",
+           "transactionID" : "1"
+        },
+        {
+            "title":"Book",
+            "amount" : "-50",
+            "currency":"$",
+            "transactionID" : "2"
+         },
+         {
+            "title":"ProteinBar",
+            "amount" : "-10",
+            "currency":"$",
+            "transactionID" : "3"
+         }
+    ]
+}

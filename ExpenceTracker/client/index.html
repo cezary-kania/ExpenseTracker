@@ -14,30 +14,23 @@
         <div class="balance">
             <div class="balance__header"> 
                 <h2 class="balance__title">YOUR BALANCE</h2>
-                <p class="balance__status">$450.00</p>
+                <p class="balance__status" id="balance__status"></p>
             </div>
             <div class="balance__elements">
                 <div class="balance__element">
                     <p class="balance__element-title">INCOME</p>
-                    <p class="balance__element-amount balance__element-amount--color-green">$500.00</p>
+                    <p class="balance__element-amount balance__element-amount--color-green" id="balance__Incomes">$0.00</p>
                 </div>
                 <div class="balance__element">
                     <p class="balance__element-title">EXPENSE</p>
-                    <p class="balance__element-amount balance__element-amount--color-red">$50.00</p>
+                    <p class="balance__element-amount balance__element-amount--color-red" id="balance__Expences">$0.00</p>
                 </div>
             </div>
         </div>
         <div class="history">
             <h2 class="history__title">History</h2>
-            <ul class="history__list">
-                <li class="history__item ">
-                    <p class="history__item-title">Payment</p>
-                    <p class="history__item-amount history__item-amount--color-green">+$500</p>
-                </li>
-                <li class="history__item">
-                    <p class="history__item-title">Book</p>
-                    <p class="history__item-amount history__item-amount--color-red">-$50</p>
-                </li>
+            <ul class="history__list" id="history__list">
+               
             </ul>
         </div>
         <div class="NewTransaction">
@@ -47,9 +40,10 @@
                 <input type="text" name="TransactionTitle" placeholder="Enter tittle..." class="NewTransaction__title-input">
                 <label for="TransactionAmount" class="NewTransaction__Amount-label">Amount <br> (negative - expense, positive -income)</label>
                 <input type="number" name="TransactionAmount" placeholder="0" class="NewTransaction__Amount-input">
-                <input type="button" value="Add transaction" class="NewTransaction__btn">
+                <input type="button" value="Add transaction" class="NewTransaction__btn" id="NewTransaction__btn">
             </form>
         </div>
     </div>
+    <script src="app.js"></script>
 </body>
 </html>
