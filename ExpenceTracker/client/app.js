@@ -78,11 +78,11 @@ function SendNewTransactionToServer(transaction) {
     data.append('amount', transaction.amount);
     data.append('currency', transaction.currency);
     xhr.send(data);
-    return JSON.parse(xhr.response);
+    return xhr;
 }
-function LoadTransactionsFromServer() {
+function LoadTransactionsFromServer(user_id) {
     const xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://127.0.0.1:5000/", false);
+    xhr.open("GET", `http://127.0.0.1:5000/?user_id=${user_id}`, false);
     xhr.send();
     return JSON.parse(xhr.response);
 }
@@ -92,8 +92,9 @@ function AddNewTransaction() {
     if(isNaN(TransactionAmount)) TransactionAmount = 0;
     if(TransactionTitle == "") TransactionTitle = "Empty Title";
     let transaction = new Transaction(TransactionTitle, TransactionAmount, "$",null);
-    let result = SendNewTransactionToServer(transaction);
-    if(result.status == "success") {
+    let res = SendNewTransactionToServer(transaction);
+    if(res.status == 200) {
+        let result = JSON.parse(res.response);
         transaction.transactionID = result.transactionID;
         document.querySelector("#history__list")
             .appendChild(
@@ -107,14 +108,15 @@ function AddNewTransaction() {
     }  
 }
 function SendDelRequestToServer(transactionID) {
+    const xhr = new XMLHttpRequest();
+    xhr.open("DELETE", `http://127.0.0.1:5000/${transactionID}`, false);
+    xhr.send();
     console.log(transactionID + " - deleted");
-    return {
-        status : "success"
-    }
+    return xhr.status;
 }
 function DeleteTransaction(transactionID) {
     let result = SendDelRequestToServer(transactionID);
-    if(result.status == "success") {
+    if(result == 204) {
         transactions = transactions.filter((value) => {
             return value.transactionID != transactionID;
         });
@@ -170,7 +172,7 @@ function InitAddBtn() {
             .addEventListener('click',AddNewTransaction);
 }
 
-let transactions = LoadTransactionsFromServer();
+let transactions = LoadTransactionsFromServer(1);
 UpdateStatus();
 InitHistoryList(transactions);
 InitAddBtn();
