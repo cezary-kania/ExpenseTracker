@@ -10,6 +10,7 @@ api = Api(app)
 dbConnector = DBConnector()
 
 class ExpenseTracker(Resource):
+    '''
     def get(self):
         return [
             {
@@ -31,6 +32,10 @@ class ExpenseTracker(Resource):
                 "transactionID" : "3"
             }
         ]
+    '''
+    def get(self):
+        user_id = 1
+        return [{"title":title,"amount" : amount,"currency":currency,"transactionID" : transactionID } for transactionID, title, amount, currency  in dbConnector.GetUserTransactions(user_id)]
     def post(self):
         parser = reqparse.RequestParser()
         parser.add_argument('title')

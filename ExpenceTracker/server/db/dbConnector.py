@@ -22,7 +22,7 @@ class DBConnector:
     def GetUserTransactions(self, user_id):
         conn = self.__connect()
         cur = conn.cursor()
-        sqlQuery = 'SELECT * FROM user_transaction where user_id = %s;'
+        sqlQuery = 'SELECT id, title, amount, currency FROM user_transaction where user_id = %s;'
         cur.execute(sqlQuery, (user_id,))
         transactions = cur.fetchall()
         cur.close()
@@ -56,4 +56,4 @@ class DBConnector:
         conn.close()
 if __name__ == "__main__":
     connector = DBConnector()
-    connector.tmp()
+    print(connector.GetUserTransactions(1))
